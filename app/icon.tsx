@@ -14,7 +14,7 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#9bdcc0",
-          borderRadius: 115,
+          borderRadius: 48,
         }}
       >
         <span style={{ fontSize: 300 }}>⚽</span>

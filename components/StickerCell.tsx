@@ -25,7 +25,7 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center rounded-xl text-center select-none aspect-square ${
+      className={`relative flex flex-col items-center justify-center rounded text-center select-none aspect-square ${
         owned
           ? "bg-mint text-ink"
           : "bg-paper text-faint border border-dashed border-black/10"
@@ -41,7 +41,7 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
       )}
 
       {duplicates > 0 && (
-        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-coral text-white text-[10px] font-bold">
+        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-sm bg-coral text-white text-[10px] font-bold">
           +{duplicates}
         </span>
       )}
@@ -52,14 +52,14 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="w-4 h-4 rounded-full bg-paper border border-black/10 text-ink text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
+            className="w-4 h-4 rounded-sm bg-paper border border-black/10 text-ink text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
             disabled={busy || duplicates === 0}
             onClick={() => run({ duplicates: duplicates - 1 })}
           >
             −
           </button>
           <button
-            className="w-4 h-4 rounded-full bg-coral text-white text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
+            className="w-4 h-4 rounded-sm bg-coral text-white text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
             disabled={busy}
             onClick={() => run({ owned: true, duplicates: duplicates + 1 })}
           >

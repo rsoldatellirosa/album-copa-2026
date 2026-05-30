@@ -57,7 +57,7 @@ export default function InstallPWA() {
     <>
       <button
         onClick={handleClick}
-        className="ml-1 px-2.5 py-1.5 rounded-full bg-coral text-white text-sm font-semibold hover:brightness-95 whitespace-nowrap"
+        className="ml-1 px-2.5 py-1.5 rounded-sm bg-coral text-white text-sm font-semibold hover:brightness-95 whitespace-nowrap"
         title="Instalar como app"
       >
         📲 Instalar
@@ -69,7 +69,7 @@ export default function InstallPWA() {
           onClick={() => setIosHelp(false)}
         >
           <div
-            className="bg-paper rounded-2xl p-5 w-full max-w-sm"
+            className="bg-paper rounded-md p-5 w-full max-w-sm"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="font-display font-bold text-ink text-lg mb-2">📲 Instalar no iPhone</h2>
@@ -80,7 +80,7 @@ export default function InstallPWA() {
             </ol>
             <button
               onClick={() => setIosHelp(false)}
-              className="mt-4 w-full py-2 rounded-xl bg-mint-deep text-white font-medium"
+              className="mt-4 w-full py-2 rounded-sm bg-mint-deep text-white font-medium"
             >
               Entendi
             </button>

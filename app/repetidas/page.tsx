@@ -51,7 +51,7 @@ export default function RepetidasPage() {
         {total > 0 && (
           <button
             onClick={copyList}
-            className="px-3 py-1.5 rounded-full bg-mint-deep text-white text-sm font-medium"
+            className="px-3 py-1.5 rounded-sm bg-mint-deep text-white text-sm font-medium"
           >
             {copied ? "Copiado! ✓" : "Copiar lista"}
           </button>
@@ -64,10 +64,10 @@ export default function RepetidasPage() {
       ) : (
         <div className="mt-4 grid gap-3">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-2xl bg-paper border border-black/5 p-3">
+            <div key={g.title} className="rounded-md bg-paper border border-black/5 p-3">
               <div className="font-display font-semibold text-ink mb-2 flex items-center gap-2">
                 {g.code && flagUrl(g.code) ? (
-                  <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded object-cover" />
+                  <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded-sm object-cover" />
                 ) : (
                   <span>⭐</span>
                 )}
@@ -77,7 +77,7 @@ export default function RepetidasPage() {
                 {g.items.map((i) => (
                   <span
                     key={i.code}
-                    className="inline-flex items-center gap-1 rounded-full bg-peach text-ink px-2.5 py-1 text-sm font-medium"
+                    className="inline-flex items-center gap-1 rounded-sm bg-peach text-ink px-2.5 py-1 text-sm font-medium"
                   >
                     {i.code}
                     {i.dup > 1 && <b className="text-coral">x{i.dup}</b>}

@@ -45,7 +45,7 @@ export default function FaltamPage() {
         {totalMissing > 0 && (
           <button
             onClick={copyList}
-            className="px-3 py-1.5 rounded-full bg-mint-deep text-white text-sm font-medium"
+            className="px-3 py-1.5 rounded-sm bg-mint-deep text-white text-sm font-medium"
           >
             {copied ? "Copiado! ✓" : "Copiar lista"}
           </button>
@@ -58,10 +58,10 @@ export default function FaltamPage() {
       ) : (
         <div className="mt-4 grid gap-3">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-2xl bg-paper border border-black/5 p-3">
+            <div key={g.title} className="rounded-md bg-paper border border-black/5 p-3">
               <div className="font-display font-semibold text-ink mb-2 flex items-center gap-2">
                 {g.code && flagUrl(g.code) ? (
-                  <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded object-cover" />
+                  <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded-sm object-cover" />
                 ) : (
                   <span>⭐</span>
                 )}
@@ -72,7 +72,7 @@ export default function FaltamPage() {
                 {g.codes.map((c) => (
                   <span
                     key={c}
-                    className="rounded-full bg-black/5 text-ink/60 px-2 py-0.5 text-xs font-medium"
+                    className="rounded-sm bg-black/5 text-ink/60 px-2 py-0.5 text-xs font-medium"
                   >
                     {c}
                   </span>
