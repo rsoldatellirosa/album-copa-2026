@@ -24,6 +24,8 @@
 :root {
   --background: var(--color-cream);
   --foreground: var(--color-ink);
+  /* Site é só claro — evita o "auto dark mode" do Chrome/Android escurecer tudo */
+  color-scheme: light;
 }
 
 body {
