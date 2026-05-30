@@ -4,6 +4,8 @@ App pessoal para controlar minhas figurinhas da Copa do Mundo FIFA 2026: o que *
 
 **Stack:** Next.js 16 (App Router) · React 19 · Tailwind v4 · Supabase (Postgres) · Vercel · PWA instalável.
 
+> Projeto open-source (MIT). Sinta-se livre pra usar como base pro seu próprio álbum. ⚽
+
 ## Como funciona
 - **Lista mestre:** 980 figurinhas — 48 seleções × 20 (`SELEÇÃO N`, ex. `BRA 10`) + 20 especiais.
 - **Leitura pública** via RLS; ninguém escreve com a chave anon.
@@ -21,9 +23,9 @@ App pessoal para controlar minhas figurinhas da Copa do Mundo FIFA 2026: o que *
    ```bash
    npm install
    npm run seed                # cria as 980 figurinhas
-   npm run import-duplicatas   # marca as repetidas do Drive
    npm run dev                 # http://localhost:3000
    ```
+   > `npm run import-duplicatas` é um script opcional, específico pra coleção do dono (códigos das repetidas embutidos em `scripts/import-duplicatas.mjs`).
 
 ## Deploy (Vercel)
 - Suba o repo no GitHub e importe na Vercel.
@@ -34,3 +36,6 @@ App pessoal para controlar minhas figurinhas da Copa do Mundo FIFA 2026: o que *
 - `components/` — `TeamCard`, `StickerCell`, `ProgressBar`, `SiteHeader`, `EditProvider`.
 - `lib/` — clientes Supabase (`supabase`, `supabaseAdmin`), `types`, `album` (fetch/save).
 - `scripts/` — `seed.mjs`, `import-duplicatas.mjs`, `teams.mjs`.
+
+## Licença
+[MIT](LICENSE) © Rodrigo Soldatelli da Rosa
