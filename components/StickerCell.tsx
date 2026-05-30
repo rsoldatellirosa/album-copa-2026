@@ -27,8 +27,8 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
     <div
       className={`relative flex flex-col items-center justify-center rounded text-center select-none aspect-square ${
         owned
-          ? "bg-mint text-ink"
-          : "bg-paper text-faint border border-dashed border-black/10"
+          ? "bg-mint text-onpastel"
+          : "bg-paper text-faint border border-dashed border-line"
       } ${editable ? "cursor-pointer hover:brightness-95" : ""} ${busy ? "opacity-60" : ""}`}
       onClick={() => run({ owned: !owned })}
       title={label ?? `Figurinha ${number}`}
@@ -52,7 +52,7 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="w-4 h-4 rounded bg-paper border border-black/10 text-ink text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
+            className="w-4 h-4 rounded bg-paper border border-line text-ink text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
             disabled={busy || duplicates === 0}
             onClick={() => run({ duplicates: duplicates - 1 })}
           >

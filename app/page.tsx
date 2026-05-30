@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-5 w-full">
       {/* Resumo */}
-      <section className="rounded-lg bg-mintsoft border border-black/5 p-5">
+      <section className="rounded-lg bg-mintsoft border border-line p-5">
         <h1 className="font-display text-sm font-semibold text-ink/60 tracking-wide uppercase">
           Minha coleção
         </h1>
@@ -72,7 +72,7 @@ export default function Home() {
             <span className="w-2.5 h-2.5 rounded-full bg-coral" /> {album.totalDuplicates} repetidas
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-black/15" /> {album.totalStickers - album.totalOwned} faltando
+            <span className="w-2.5 h-2.5 rounded-full bg-faint" /> {album.totalStickers - album.totalOwned} faltando
           </span>
         </div>
         {!unlocked && (
@@ -87,7 +87,7 @@ export default function Home() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar seleção, código (ex. BRA 10) ou jogador…"
-        className="mt-5 w-full rounded border border-black/10 bg-paper px-4 py-2.5 text-ink placeholder:text-faint outline-none focus:ring-2 focus:ring-mint"
+        className="mt-5 w-full rounded border border-line bg-paper px-4 py-2.5 text-ink placeholder:text-faint outline-none focus:ring-2 focus:ring-mint"
       />
 
       {/* Seleções */}
@@ -107,7 +107,7 @@ export default function Home() {
       {album.specials.length > 0 && !search.trim() && (
         <div className="mt-6">
           <h2 className="font-display font-semibold text-ink mb-2 px-1">⭐ Especiais</h2>
-          <div className="rounded-lg bg-paper border border-black/5 p-3 grid grid-cols-5 sm:grid-cols-10 gap-2">
+          <div className="rounded-lg bg-paper border border-line p-3 grid grid-cols-5 sm:grid-cols-10 gap-2">
             {album.specials.map((s) => (
               <SpecialCell key={s.id} code={s.code} owned={s.owned} duplicates={s.duplicates} />
             ))}
@@ -153,7 +153,7 @@ function SpecialCell({ code, owned, duplicates }: { code: string; owned: boolean
   return (
     <div
       className={`relative flex items-center justify-center rounded text-center aspect-square text-[10px] font-bold ${
-        owned ? "bg-butter text-ink" : "bg-paper border border-dashed border-black/10 text-faint"
+        owned ? "bg-butter text-onpastel" : "bg-paper border border-dashed border-line text-faint"
       }`}
       title={code}
     >

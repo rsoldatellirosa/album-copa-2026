@@ -31,7 +31,7 @@ export default function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-20 bg-cream/85 backdrop-blur border-b border-black/5">
+    <header className="sticky top-0 z-20 bg-cream/85 backdrop-blur border-b border-line">
       <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span className="w-7 h-7 rounded bg-mint flex items-center justify-center text-sm">⚽</span>
@@ -46,7 +46,7 @@ export default function SiteHeader() {
               key={l.href}
               href={l.href}
               className={`px-2.5 py-1.5 rounded font-medium transition-colors ${
-                pathname === l.href ? "bg-mint text-ink" : "text-ink/60 hover:bg-black/5"
+                pathname === l.href ? "bg-mint text-onpastel" : "text-ink/60 hover:bg-soft"
               }`}
             >
               {l.label}
@@ -56,7 +56,7 @@ export default function SiteHeader() {
           {unlocked ? (
             <button
               onClick={lock}
-              className="ml-1 px-2.5 py-1.5 rounded text-ink hover:bg-black/5"
+              className="ml-1 px-2.5 py-1.5 rounded text-ink hover:bg-soft"
               title="Sair do modo edição"
             >
               🔓
@@ -64,7 +64,7 @@ export default function SiteHeader() {
           ) : (
             <button
               onClick={() => setAsking(true)}
-              className="ml-1 px-2.5 py-1.5 rounded text-faint hover:bg-black/5"
+              className="ml-1 px-2.5 py-1.5 rounded text-faint hover:bg-soft"
               title="Desbloquear edição"
             >
               🔒
@@ -84,12 +84,12 @@ export default function SiteHeader() {
               onChange={(e) => setPin(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && submit()}
               autoFocus
-              className="w-full bg-cream border border-black/10 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-mint"
+              className="w-full bg-cream border border-line rounded px-3 py-2 outline-none focus:ring-2 focus:ring-mint"
               placeholder="PIN"
             />
             {error && <p className="text-coral text-sm mt-2">{error}</p>}
             <div className="flex gap-2 mt-4">
-              <button onClick={() => setAsking(false)} className="flex-1 py-2 rounded border border-black/10 text-ink/60">
+              <button onClick={() => setAsking(false)} className="flex-1 py-2 rounded border border-line text-ink/60">
                 Cancelar
               </button>
               <button onClick={submit} className="flex-1 py-2 rounded bg-mint-deep text-white font-medium">

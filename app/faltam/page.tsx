@@ -58,7 +58,7 @@ export default function FaltamPage() {
       ) : (
         <div className="mt-4 grid gap-3">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-lg bg-paper border border-black/5 p-3">
+            <div key={g.title} className="rounded-lg bg-paper border border-line p-3">
               <div className="font-display font-semibold text-ink mb-2 flex items-center gap-2">
                 {g.code && flagUrl(g.code) ? (
                   <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded object-cover" />
@@ -72,7 +72,7 @@ export default function FaltamPage() {
                 {g.codes.map((c) => (
                   <span
                     key={c}
-                    className="rounded bg-black/5 text-ink/60 px-2 py-0.5 text-xs font-medium"
+                    className="rounded bg-soft text-ink/60 px-2 py-0.5 text-xs font-medium"
                   >
                     {c}
                   </span>
