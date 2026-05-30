@@ -27,7 +27,7 @@ export default function TeamCard({ data, editable, onSaveSticker, defaultOpen = 
   const flag = flagUrl(team.code, 80);
 
   return (
-    <div className="rounded-md bg-paper border border-black/5 overflow-hidden">
+    <div className="rounded-lg bg-paper border border-black/5 overflow-hidden">
       <button
         className="w-full flex items-center gap-3 p-3 text-left"
         onClick={() => setOpen((o) => !o)}
@@ -39,10 +39,10 @@ export default function TeamCard({ data, editable, onSaveSticker, defaultOpen = 
             width={36}
             height={27}
             loading="lazy"
-            className="w-9 h-[27px] rounded-sm object-cover shrink-0"
+            className="w-9 h-[27px] rounded object-cover shrink-0"
           />
         ) : (
-          <span className="w-9 h-[27px] rounded-sm bg-black/5 flex items-center justify-center text-[10px] font-bold shrink-0">
+          <span className="w-9 h-[27px] rounded bg-black/5 flex items-center justify-center text-[10px] font-bold shrink-0">
             {team.code}
           </span>
         )}
@@ -50,7 +50,7 @@ export default function TeamCard({ data, editable, onSaveSticker, defaultOpen = 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="font-display font-semibold text-ink truncate">{team.name}</span>
-            <span className={`text-[10px] font-semibold text-ink/70 rounded-sm px-2 py-0.5 ${GROUP_TINT[team.group] ?? "bg-mint"}`}>
+            <span className={`text-[10px] font-semibold text-ink/70 rounded px-2 py-0.5 ${GROUP_TINT[team.group] ?? "bg-mint"}`}>
               {team.group}
             </span>
             {complete && <span className="w-2 h-2 rounded-full bg-mint-deep" title="Completa!" />}

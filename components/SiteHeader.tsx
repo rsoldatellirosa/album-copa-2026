@@ -34,7 +34,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-20 bg-cream/85 backdrop-blur border-b border-black/5">
       <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="w-7 h-7 rounded-sm bg-mint flex items-center justify-center text-sm">⚽</span>
+          <span className="w-7 h-7 rounded bg-mint flex items-center justify-center text-sm">⚽</span>
           <span className="font-display font-bold text-ink tracking-tight hidden sm:block">
             Copa 2026
           </span>
@@ -45,7 +45,7 @@ export default function SiteHeader() {
             <Link
               key={l.href}
               href={l.href}
-              className={`px-2.5 py-1.5 rounded-sm font-medium transition-colors ${
+              className={`px-2.5 py-1.5 rounded font-medium transition-colors ${
                 pathname === l.href ? "bg-mint text-ink" : "text-ink/60 hover:bg-black/5"
               }`}
             >
@@ -56,7 +56,7 @@ export default function SiteHeader() {
           {unlocked ? (
             <button
               onClick={lock}
-              className="ml-1 px-2.5 py-1.5 rounded-sm text-ink hover:bg-black/5"
+              className="ml-1 px-2.5 py-1.5 rounded text-ink hover:bg-black/5"
               title="Sair do modo edição"
             >
               🔓
@@ -64,7 +64,7 @@ export default function SiteHeader() {
           ) : (
             <button
               onClick={() => setAsking(true)}
-              className="ml-1 px-2.5 py-1.5 rounded-sm text-faint hover:bg-black/5"
+              className="ml-1 px-2.5 py-1.5 rounded text-faint hover:bg-black/5"
               title="Desbloquear edição"
             >
               🔒
@@ -75,7 +75,7 @@ export default function SiteHeader() {
 
       {asking && (
         <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/30 p-4" onClick={() => setAsking(false)}>
-          <div className="bg-paper rounded-md p-5 w-full max-w-xs" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-paper rounded-lg p-5 w-full max-w-xs" onClick={(e) => e.stopPropagation()}>
             <h2 className="font-display font-bold text-ink mb-1">Modo edição</h2>
             <p className="text-sm text-faint mb-3">Digite o PIN para liberar a edição.</p>
             <input
@@ -84,15 +84,15 @@ export default function SiteHeader() {
               onChange={(e) => setPin(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && submit()}
               autoFocus
-              className="w-full bg-cream border border-black/10 rounded-sm px-3 py-2 outline-none focus:ring-2 focus:ring-mint"
+              className="w-full bg-cream border border-black/10 rounded px-3 py-2 outline-none focus:ring-2 focus:ring-mint"
               placeholder="PIN"
             />
             {error && <p className="text-coral text-sm mt-2">{error}</p>}
             <div className="flex gap-2 mt-4">
-              <button onClick={() => setAsking(false)} className="flex-1 py-2 rounded-sm border border-black/10 text-ink/60">
+              <button onClick={() => setAsking(false)} className="flex-1 py-2 rounded border border-black/10 text-ink/60">
                 Cancelar
               </button>
-              <button onClick={submit} className="flex-1 py-2 rounded-sm bg-mint-deep text-white font-medium">
+              <button onClick={submit} className="flex-1 py-2 rounded bg-mint-deep text-white font-medium">
                 Entrar
               </button>
             </div>
