@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useEdit } from "./EditProvider";
+import InstallPWA from "./InstallPWA";
 
 const links = [
   { href: "/", label: "Álbum" },
@@ -56,6 +57,7 @@ export default function SiteHeader() {
               {l.label}
             </Link>
           ))}
+          <InstallPWA />
           {unlocked ? (
             <button
               onClick={lock}
