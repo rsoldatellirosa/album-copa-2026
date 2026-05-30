@@ -6,10 +6,10 @@ export const teams = [
   { code: "MEX", name: "México", group: "A", flag: "🇲🇽", is_placeholder: false },
   { code: "RSA", name: "África do Sul", group: "A", flag: "🇿🇦", is_placeholder: false },
   { code: "KOR", name: "Coreia do Sul", group: "A", flag: "🇰🇷", is_placeholder: false },
-  { code: "PED", name: "Repescagem Europa D", group: "A", flag: "🏳️", is_placeholder: true },
+  { code: "CZE", name: "Tchéquia", group: "A", flag: "🇨🇿", is_placeholder: false },
   // Grupo B
   { code: "CAN", name: "Canadá", group: "B", flag: "🇨🇦", is_placeholder: false },
-  { code: "PEA", name: "Repescagem Europa A", group: "B", flag: "🏳️", is_placeholder: true },
+  { code: "BIH", name: "Bósnia e Herzegovina", group: "B", flag: "🇧🇦", is_placeholder: false },
   { code: "QAT", name: "Catar", group: "B", flag: "🇶🇦", is_placeholder: false },
   { code: "SUI", name: "Suíça", group: "B", flag: "🇨🇭", is_placeholder: false },
   // Grupo C
@@ -21,7 +21,7 @@ export const teams = [
   { code: "USA", name: "Estados Unidos", group: "D", flag: "🇺🇸", is_placeholder: false },
   { code: "PAR", name: "Paraguai", group: "D", flag: "🇵🇾", is_placeholder: false },
   { code: "AUS", name: "Austrália", group: "D", flag: "🇦🇺", is_placeholder: false },
-  { code: "PEC", name: "Repescagem Europa C", group: "D", flag: "🏳️", is_placeholder: true },
+  { code: "TUR", name: "Türkiye", group: "D", flag: "🇹🇷", is_placeholder: false },
   // Grupo E
   { code: "GER", name: "Alemanha", group: "E", flag: "🇩🇪", is_placeholder: false },
   { code: "CUW", name: "Curaçao", group: "E", flag: "🇨🇼", is_placeholder: false },
@@ -30,7 +30,7 @@ export const teams = [
   // Grupo F
   { code: "NED", name: "Holanda", group: "F", flag: "🇳🇱", is_placeholder: false },
   { code: "JPN", name: "Japão", group: "F", flag: "🇯🇵", is_placeholder: false },
-  { code: "PEB", name: "Repescagem Europa B", group: "F", flag: "🏳️", is_placeholder: true },
+  { code: "SWE", name: "Suécia", group: "F", flag: "🇸🇪", is_placeholder: false },
   { code: "TUN", name: "Tunísia", group: "F", flag: "🇹🇳", is_placeholder: false },
   // Grupo G
   { code: "BEL", name: "Bélgica", group: "G", flag: "🇧🇪", is_placeholder: false },
@@ -45,7 +45,7 @@ export const teams = [
   // Grupo I
   { code: "FRA", name: "França", group: "I", flag: "🇫🇷", is_placeholder: false },
   { code: "SEN", name: "Senegal", group: "I", flag: "🇸🇳", is_placeholder: false },
-  { code: "PI2", name: "Repescagem Intercontinental 2", group: "I", flag: "🏳️", is_placeholder: true },
+  { code: "IRQ", name: "Iraque", group: "I", flag: "🇮🇶", is_placeholder: false },
   { code: "NOR", name: "Noruega", group: "I", flag: "🇳🇴", is_placeholder: false },
   // Grupo J
   { code: "ARG", name: "Argentina", group: "J", flag: "🇦🇷", is_placeholder: false },
@@ -54,7 +54,7 @@ export const teams = [
   { code: "JOR", name: "Jordânia", group: "J", flag: "🇯🇴", is_placeholder: false },
   // Grupo K
   { code: "POR", name: "Portugal", group: "K", flag: "🇵🇹", is_placeholder: false },
-  { code: "PI1", name: "Repescagem Intercontinental 1", group: "K", flag: "🏳️", is_placeholder: true },
+  { code: "COD", name: "Congo (RD)", group: "K", flag: "🇨🇩", is_placeholder: false },
   { code: "UZB", name: "Uzbequistão", group: "K", flag: "🇺🇿", is_placeholder: false },
   { code: "COL", name: "Colômbia", group: "K", flag: "🇨🇴", is_placeholder: false },
   // Grupo L
