@@ -57,7 +57,7 @@ export default function InstallPWA() {
     <>
       <button
         onClick={handleClick}
-        className="ml-1 px-2.5 py-1.5 rounded-md bg-amber-500 text-white text-sm font-semibold hover:bg-amber-600 whitespace-nowrap"
+        className="ml-1 px-2.5 py-1.5 rounded-full bg-coral text-white text-sm font-semibold hover:brightness-95 whitespace-nowrap"
         title="Instalar como app"
       >
         📲 Instalar
@@ -69,18 +69,18 @@ export default function InstallPWA() {
           onClick={() => setIosHelp(false)}
         >
           <div
-            className="bg-white rounded-2xl p-5 w-full max-w-sm shadow-xl"
+            className="bg-paper rounded-2xl p-5 w-full max-w-sm"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="font-bold text-emerald-900 text-lg mb-2">📲 Instalar no iPhone</h2>
-            <ol className="text-sm text-gray-700 space-y-2 list-decimal list-inside">
+            <h2 className="font-display font-bold text-ink text-lg mb-2">📲 Instalar no iPhone</h2>
+            <ol className="text-sm text-ink/70 space-y-2 list-decimal list-inside">
               <li>Toque no botão <b>Compartilhar</b> (o quadradinho com a seta ↑) na barra do Safari.</li>
               <li>Role e toque em <b>&quot;Adicionar à Tela de Início&quot;</b>.</li>
               <li>Confirme em <b>Adicionar</b>. Pronto — vira um app! ⚽</li>
             </ol>
             <button
               onClick={() => setIosHelp(false)}
-              className="mt-4 w-full py-2 rounded-lg bg-emerald-600 text-white font-medium"
+              className="mt-4 w-full py-2 rounded-xl bg-mint-deep text-white font-medium"
             >
               Entendi
             </button>

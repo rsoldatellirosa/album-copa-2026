@@ -58,21 +58,25 @@ export default function Home() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-5 w-full">
       {/* Resumo */}
-      <section className="rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-900 text-white p-5 shadow-lg">
-        <h1 className="text-lg font-extrabold flex items-center gap-2">
-          Minha coleção da Copa 2026
+      <section className="rounded-2xl bg-mintsoft border border-black/5 p-5">
+        <h1 className="font-display text-sm font-semibold text-ink/60 tracking-wide uppercase">
+          Minha coleção
         </h1>
-        <div className="flex items-end gap-2 mt-2">
-          <span className="text-4xl font-black">{album.totalOwned}</span>
-          <span className="text-emerald-200 mb-1">/ {album.totalStickers} figurinhas ({pct}%)</span>
+        <div className="flex items-baseline gap-2 mt-1">
+          <span className="font-display text-5xl font-bold text-ink">{album.totalOwned}</span>
+          <span className="text-ink/50">/ {album.totalStickers} · {pct}%</span>
         </div>
         <ProgressBar value={album.totalOwned} total={album.totalStickers} className="mt-3" />
-        <div className="flex gap-4 mt-3 text-sm text-emerald-100">
-          <span>🟡 {album.totalDuplicates} repetidas</span>
-          <span>❌ {album.totalStickers - album.totalOwned} faltando</span>
+        <div className="flex gap-4 mt-3 text-sm text-ink/70">
+          <span className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-coral" /> {album.totalDuplicates} repetidas
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-black/15" /> {album.totalStickers - album.totalOwned} faltando
+          </span>
         </div>
         {!unlocked && (
-          <p className="text-xs text-emerald-200/80 mt-3">
+          <p className="text-xs text-ink/45 mt-3">
             Modo visualização. Toque no 🔒 no topo e digite o PIN para editar.
           </p>
         )}
@@ -83,7 +87,7 @@ export default function Home() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar seleção, código (ex. BRA 10) ou jogador…"
-        className="mt-5 w-full rounded-xl border border-emerald-200 bg-white px-4 py-2.5 outline-none focus:ring-2 focus:ring-emerald-400"
+        className="mt-5 w-full rounded-full border border-black/10 bg-paper px-4 py-2.5 text-ink placeholder:text-faint outline-none focus:ring-2 focus:ring-mint"
       />
 
       {/* Seleções */}
@@ -102,8 +106,8 @@ export default function Home() {
       {/* Especiais */}
       {album.specials.length > 0 && !search.trim() && (
         <div className="mt-6">
-          <h2 className="font-bold text-emerald-900 mb-2 px-1">⭐ Especiais</h2>
-          <div className="rounded-xl bg-white border border-emerald-100 shadow-sm p-3 grid grid-cols-5 sm:grid-cols-10 gap-2">
+          <h2 className="font-display font-semibold text-ink mb-2 px-1">⭐ Especiais</h2>
+          <div className="rounded-2xl bg-paper border border-black/5 p-3 grid grid-cols-5 sm:grid-cols-10 gap-2">
             {album.specials.map((s) => (
               <SpecialCell key={s.id} code={s.code} owned={s.owned} duplicates={s.duplicates} />
             ))}
@@ -111,7 +115,7 @@ export default function Home() {
         </div>
       )}
 
-      <footer className="text-center text-xs text-emerald-500/70 py-8">
+      <footer className="text-center text-xs text-faint py-8">
         Feito com ⚽ • Álbum FIFA World Cup 2026
       </footer>
     </main>
@@ -148,14 +152,14 @@ function applyPatch(
 function SpecialCell({ code, owned, duplicates }: { code: string; owned: boolean; duplicates: number }) {
   return (
     <div
-      className={`relative flex items-center justify-center rounded-lg border text-center aspect-square text-[10px] font-bold ${
-        owned ? "bg-amber-500 border-amber-600 text-white" : "bg-white border-amber-100 text-amber-300"
+      className={`relative flex items-center justify-center rounded-xl text-center aspect-square text-[10px] font-bold ${
+        owned ? "bg-butter text-ink" : "bg-paper border border-dashed border-black/10 text-faint"
       }`}
       title={code}
     >
       {code}
       {duplicates > 0 && (
-        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-emerald-600 text-white text-[10px] shadow">
+        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-coral text-white text-[10px]">
           +{duplicates}
         </span>
       )}
@@ -165,7 +169,7 @@ function SpecialCell({ code, owned, duplicates }: { code: string; owned: boolean
 
 function Centered({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex-1 flex items-center justify-center text-emerald-700 p-8 text-center">
+    <main className="flex-1 flex items-center justify-center text-ink/60 p-8 text-center">
       {children}
     </main>
   );

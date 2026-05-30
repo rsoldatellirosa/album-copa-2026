@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { fetchAlbum, type Album } from "@/lib/album";
+import { flagUrl } from "@/lib/flags";
 
 export default function FaltamPage() {
   const [album, setAlbum] = useState<Album | null>(null);
@@ -16,13 +17,13 @@ export default function FaltamPage() {
 
   const groups = useMemo(() => {
     if (!album) return [];
-    const result: { title: string; flag: string; codes: string[] }[] = [];
+    const result: { title: string; flag: string; code: string | null; codes: string[] }[] = [];
     for (const t of album.teams) {
       const codes = t.stickers.filter((s) => !s.owned).map((s) => s.code);
-      if (codes.length) result.push({ title: t.team.name, flag: t.team.flag, codes });
+      if (codes.length) result.push({ title: t.team.name, flag: t.team.flag, code: t.team.code, codes });
     }
     const specials = album.specials.filter((s) => !s.owned).map((s) => s.code);
-    if (specials.length) result.push({ title: "Especiais", flag: "⭐", codes: specials });
+    if (specials.length) result.push({ title: "Especiais", flag: "⭐", code: null, codes: specials });
     return result;
   }, [album]);
 
@@ -40,33 +41,38 @@ export default function FaltamPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-5 w-full">
       <div className="flex items-center justify-between gap-3">
-        <h1 className="text-xl font-extrabold text-emerald-900">❌ O que falta</h1>
+        <h1 className="font-display text-xl font-bold text-ink">❌ O que falta</h1>
         {totalMissing > 0 && (
           <button
             onClick={copyList}
-            className="px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-sm font-medium shadow-sm"
+            className="px-3 py-1.5 rounded-full bg-mint-deep text-white text-sm font-medium"
           >
             {copied ? "Copiado! ✓" : "Copiar lista"}
           </button>
         )}
       </div>
-      <p className="text-emerald-600 text-sm mt-1">{totalMissing} figurinhas faltando</p>
+      <p className="text-ink/55 text-sm mt-1">{totalMissing} figurinhas faltando</p>
 
       {groups.length === 0 ? (
         <Centered>Álbum completo! 🏆</Centered>
       ) : (
         <div className="mt-4 grid gap-3">
           {groups.map((g) => (
-            <div key={g.title} className="rounded-xl bg-white border border-emerald-100 shadow-sm p-3">
-              <div className="font-semibold text-emerald-900 mb-2">
-                {g.flag} {g.title}{" "}
-                <span className="text-xs font-normal text-emerald-500">({g.codes.length})</span>
+            <div key={g.title} className="rounded-2xl bg-paper border border-black/5 p-3">
+              <div className="font-display font-semibold text-ink mb-2 flex items-center gap-2">
+                {g.code && flagUrl(g.code) ? (
+                  <img src={flagUrl(g.code)!} alt="" width={22} height={16} className="w-[22px] h-4 rounded object-cover" />
+                ) : (
+                  <span>⭐</span>
+                )}
+                {g.title}
+                <span className="text-xs font-normal text-faint">({g.codes.length})</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {g.codes.map((c) => (
                   <span
                     key={c}
-                    className="rounded-md bg-gray-50 border border-gray-200 text-gray-600 px-2 py-0.5 text-xs font-medium"
+                    className="rounded-full bg-black/5 text-ink/60 px-2 py-0.5 text-xs font-medium"
                   >
                     {c}
                   </span>
@@ -81,5 +87,5 @@ export default function FaltamPage() {
 }
 
 function Centered({ children }: { children: React.ReactNode }) {
-  return <div className="text-center text-emerald-600 py-16">{children}</div>;
+  return <div className="text-center text-ink/60 py-16">{children}</div>;
 }

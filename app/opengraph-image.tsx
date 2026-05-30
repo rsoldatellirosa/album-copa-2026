@@ -15,8 +15,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #047857 0%, #065f46 60%, #064e3b 100%)",
-          color: "white",
+          background: "#f6f3ec",
+          color: "#34404a",
           fontFamily: "sans-serif",
         }}
       >
@@ -24,7 +24,7 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 76, fontWeight: 800, marginTop: 8 }}>
           Álbum Copa 2026
         </div>
-        <div style={{ fontSize: 36, color: "#fcd34d", marginTop: 12 }}>
+        <div style={{ fontSize: 34, color: "#5fb89a", marginTop: 12 }}>
           Minhas figurinhas • o que falta • repetidas pra trocar
         </div>
       </div>

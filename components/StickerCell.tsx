@@ -25,25 +25,23 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center rounded-lg border text-center select-none aspect-square ${
+      className={`relative flex flex-col items-center justify-center rounded-xl text-center select-none aspect-square ${
         owned
-          ? "bg-emerald-600 border-emerald-700 text-white"
-          : "bg-white border-emerald-100 text-emerald-300"
-      } ${editable ? "cursor-pointer hover:ring-2 hover:ring-emerald-400" : ""} ${
-        busy ? "opacity-60" : ""
-      }`}
+          ? "bg-mint text-ink"
+          : "bg-paper text-faint border border-dashed border-black/10"
+      } ${editable ? "cursor-pointer hover:brightness-95" : ""} ${busy ? "opacity-60" : ""}`}
       onClick={() => run({ owned: !owned })}
       title={label ?? `Figurinha ${number}`}
     >
-      <span className="text-base font-bold leading-none">{number}</span>
+      <span className="font-display text-base font-semibold leading-none">{number}</span>
       {label && (
-        <span className="px-0.5 mt-0.5 text-[8px] leading-tight line-clamp-1 opacity-80">
+        <span className="px-0.5 mt-0.5 text-[8px] leading-tight line-clamp-1 opacity-70">
           {label}
         </span>
       )}
 
       {duplicates > 0 && (
-        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-amber-500 text-white text-[10px] font-bold shadow">
+        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-coral text-white text-[10px] font-bold">
           +{duplicates}
         </span>
       )}
@@ -54,14 +52,14 @@ export default function StickerCell({ sticker, editable, onSave }: Props) {
           onClick={(e) => e.stopPropagation()}
         >
           <button
-            className="w-4 h-4 rounded-full bg-white border border-emerald-300 text-emerald-700 text-[10px] leading-none flex items-center justify-center shadow-sm disabled:opacity-40"
+            className="w-4 h-4 rounded-full bg-paper border border-black/10 text-ink text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
             disabled={busy || duplicates === 0}
             onClick={() => run({ duplicates: duplicates - 1 })}
           >
             −
           </button>
           <button
-            className="w-4 h-4 rounded-full bg-amber-500 text-white text-[10px] leading-none flex items-center justify-center shadow-sm disabled:opacity-40"
+            className="w-4 h-4 rounded-full bg-coral text-white text-[10px] leading-none flex items-center justify-center disabled:opacity-40"
             disabled={busy}
             onClick={() => run({ owned: true, duplicates: duplicates + 1 })}
           >

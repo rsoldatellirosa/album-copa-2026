@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { EditProvider } from "@/components/EditProvider";
 import SiteHeader from "@/components/SiteHeader";
@@ -7,7 +7,13 @@ import SiteHeader from "@/components/SiteHeader";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const display = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 const title = "Álbum Copa 2026 ⚽";
@@ -36,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#047857",
+  themeColor: "#f6f3ec",
 };
 
 export default function RootLayout({
@@ -45,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="pt-BR" className={`${inter.variable} ${display.variable}`}>
       <body className="min-h-full flex flex-col">
         <EditProvider>
           <SiteHeader />

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { TeamWithStickers } from "@/lib/album";
+import { flagUrl } from "@/lib/flags";
 import StickerCell from "./StickerCell";
 import ProgressBar from "./ProgressBar";
 
@@ -12,33 +13,56 @@ interface Props {
   defaultOpen?: boolean;
 }
 
+// Cor pastel por grupo (vibe 90s, color-blocking suave)
+const GROUP_TINT: Record<string, string> = {
+  A: "bg-mint", B: "bg-peach", C: "bg-lav", D: "bg-butter",
+  E: "bg-pinky", F: "bg-sky", G: "bg-mint", H: "bg-peach",
+  I: "bg-lav", J: "bg-butter", K: "bg-pinky", L: "bg-sky",
+};
+
 export default function TeamCard({ data, editable, onSaveSticker, defaultOpen = false }: Props) {
   const [open, setOpen] = useState(defaultOpen);
   const { team, stickers, owned, total } = data;
   const complete = owned === total && total > 0;
+  const flag = flagUrl(team.code, 80);
 
   return (
-    <div className="rounded-xl bg-white border border-emerald-100 shadow-sm overflow-hidden">
+    <div className="rounded-2xl bg-paper border border-black/5 overflow-hidden">
       <button
         className="w-full flex items-center gap-3 p-3 text-left"
         onClick={() => setOpen((o) => !o)}
       >
-        <span className="text-2xl leading-none">{team.flag}</span>
+        {flag ? (
+          <img
+            src={flag}
+            alt={team.name}
+            width={36}
+            height={27}
+            loading="lazy"
+            className="w-9 h-[27px] rounded-md object-cover shrink-0"
+          />
+        ) : (
+          <span className="w-9 h-[27px] rounded-md bg-black/5 flex items-center justify-center text-[10px] font-bold shrink-0">
+            {team.code}
+          </span>
+        )}
+
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-emerald-900 truncate">{team.name}</span>
-            <span className="text-[10px] font-bold text-emerald-500 bg-emerald-50 rounded px-1.5 py-0.5">
-              Grupo {team.group}
+            <span className="font-display font-semibold text-ink truncate">{team.name}</span>
+            <span className={`text-[10px] font-semibold text-ink/70 rounded-full px-2 py-0.5 ${GROUP_TINT[team.group] ?? "bg-mint"}`}>
+              {team.group}
             </span>
-            {complete && <span title="Completa!">✅</span>}
+            {complete && <span className="w-2 h-2 rounded-full bg-mint-deep" title="Completa!" />}
           </div>
           <ProgressBar value={owned} total={total} className="mt-1.5" />
         </div>
+
         <div className="text-right shrink-0">
-          <div className={`text-sm font-bold ${complete ? "text-emerald-600" : "text-emerald-900"}`}>
-            {owned}/{total}
+          <div className="font-display text-sm font-semibold text-ink">
+            {owned}<span className="text-faint">/{total}</span>
           </div>
-          <div className="text-emerald-400 text-xs">{open ? "▲" : "▼"}</div>
+          <div className="text-faint text-xs">{open ? "▲" : "▼"}</div>
         </div>
       </button>
 
