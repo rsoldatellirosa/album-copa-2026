@@ -1,0 +1,25 @@
+{
+  "_doc": "Cromos adquiridos (pasta Drive 1TurCJQk...). team = importável (owned/duplicates); specials = FWC, fora do modelo, listar p/ marcar manual.",
+  "team": [
+    "URU-14","URU-16","URU-17","URU-18","URU-19","URU-20",
+    "IRQ-2","IRQ-3","IRQ-7","IRQ-12","IRQ-13","IRQ-19","IRQ-20",
+    "UZB-1","KSA-1","SWE-1","BIH-1","AUT-1","COD-1",
+    "QAT-8","QAT-10","QAT-12","QAT-14","QAT-19",
+    "URU-3","URU-8","ESP-2","ESP-4","ESP-6","ESP-8","TUN-18","UZB-14","UZB-17",
+    "CZE-4","CZE-5","CZE-6","CZE-7","CZE-9","CZE-11","CZE-12",
+    "UZB-3","UZB-6","UZB-19","UZB-20",
+    "SCO-4","SCO-5","SCO-6","SCO-7","SCO-9","SCO-10","SCO-12","SCO-13",
+    "TUR-4","TUR-12","TUR-16",
+    "TUR-5","TUR-8","TUR-11","TUR-18","SUI-2","SUI-6","SUI-9","SUI-10","SUI-15",
+    "RSA-4","RSA-19","POR-9","POR-13","JPN-9","CPV-14",
+    "JPN-4","PAN-2","PAN-7","PAN-14","PAN-15","USA-4","USA-10","USA-19",
+    "COL-13","CRO-16","ENG-10","EGY-17",
+    "USA-8","USA-11","USA-15","USA-17","USA-18","USA-20","NED-3","JOR-7","JOR-20",
+    "COD-11","SWE-2","SWE-4","SWE-5","HAI-14","HAI-18","IRN-12",
+    "GHA-8","IRN-8","KOR-9","KOR-10","ALG-9","ALG-13","ALG-14","ALG-17",
+    "BIH-6","BIH-8","BIH-11","BIH-16","TUN-8","TUN-11","TUN-13",
+    "TUN-2","TUN-3","TUN-7","TUN-16","ARG-12","ARG-13","ARG-14","AUT-13",
+    "SEN-3","SEN-17","BEL-13","IRN-17"
+  ],
+  "specials": ["FWC 18","FWC 9","FWC 11","FWC 13","FWC 15","FWC 7"]
+}
