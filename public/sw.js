@@ -1,7 +1,7 @@
 // Service worker do Álbum Copa 2026 (PWA)
 // Cacheia o "shell" do app pra instalar e abrir offline.
 // NÃO cacheia as chamadas ao Supabase (cross-origin) — dados sempre frescos.
-const CACHE = "copa2026-v3";
+const CACHE = "copa2026-v4";
 const APP_SHELL = ["/", "/repetidas", "/faltam", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {

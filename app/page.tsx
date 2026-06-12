@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchAlbum, saveSticker, type Album } from "@/lib/album";
 import { useEdit } from "@/components/EditProvider";
 import TeamCard from "@/components/TeamCard";
+import StickerCell from "@/components/StickerCell";
 import ProgressBar from "@/components/ProgressBar";
 
 export default function Home() {
@@ -103,13 +104,20 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Especiais */}
+      {/* Especiais (FWC) — editáveis como os de seleção */}
       {album.specials.length > 0 && !search.trim() && (
         <div className="mt-6">
-          <h2 className="font-display font-semibold text-ink mb-2 px-1">⭐ Especiais</h2>
+          <h2 className="font-display font-semibold text-ink mb-2 px-1">
+            ⭐ Especiais <span className="text-faint text-sm font-normal">(FWC 1–20)</span>
+          </h2>
           <div className="rounded-lg bg-paper border border-line p-3 grid grid-cols-5 sm:grid-cols-10 gap-2">
             {album.specials.map((s) => (
-              <SpecialCell key={s.id} code={s.code} owned={s.owned} duplicates={s.duplicates} />
+              <StickerCell
+                key={s.id}
+                sticker={s}
+                editable={unlocked}
+                onSave={(patch) => onSaveSticker(s.id, patch)}
+              />
             ))}
           </div>
         </div>
@@ -147,24 +155,6 @@ function applyPatch(
   const specials = album.specials.map(patchSticker);
 
   return { ...album, teams, specials, totalOwned, totalDuplicates };
-}
-
-function SpecialCell({ code, owned, duplicates }: { code: string; owned: boolean; duplicates: number }) {
-  return (
-    <div
-      className={`relative flex items-center justify-center rounded text-center aspect-square text-[10px] font-bold ${
-        owned ? "bg-butter text-onpastel" : "bg-paper border border-dashed border-line text-faint"
-      }`}
-      title={code}
-    >
-      {code}
-      {duplicates > 0 && (
-        <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded bg-coral text-white text-[10px]">
-          +{duplicates}
-        </span>
-      )}
-    </div>
-  );
 }
 
 function Centered({ children }: { children: React.ReactNode }) {

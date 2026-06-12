@@ -30,12 +30,9 @@ function buildRows() {
       });
     }
   }
-  // Especiais: 9 de abertura + 11 FIFA Museum
-  for (let n = 1; n <= 9; n++) {
-    stickerRows.push({ id: `OPN-${n}`, code: `ABE ${n}`, team_code: null, number: n, section: "opening", kind: "special", label: null });
-  }
-  for (let n = 1; n <= 11; n++) {
-    stickerRows.push({ id: `MUS-${n}`, code: `MUS ${n}`, team_code: null, number: n, section: "museum", kind: "special", label: null });
+  // Especiais: 20 cromos FWC (numeração real do verso: "FWC N")
+  for (let n = 1; n <= 20; n++) {
+    stickerRows.push({ id: `FWC-${n}`, code: `FWC ${n}`, team_code: null, number: n, section: "special", kind: "special", label: null });
   }
   return { teamRows, stickerRows };
 }
