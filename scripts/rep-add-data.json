@@ -1,0 +1,10 @@
+{
+  "_doc": "Repetidas novas (Drive 1VyrdHHG, WA 2026-06-17). 3 fotos sobrepostas do mesmo monte -> conjunto único. ADICIONA (duplicates += 1, owned=true). 1 cópia cada (não deu p/ contar 2x em foto WhatsApp baixa-res).",
+  "team": [
+    "CPV-9","BRA-14","BRA-6","BRA-18","CZE-5","CZE-14","SUI-13","KOR-6","ARG-13",
+    "UZB-18","UZB-13","FRA-17","BIH-6","SCO-2","ALG-20","ALG-3","COL-7","NOR-12",
+    "NOR-6","AUT-5","BEL-7","SWE-6","TUR-11","TUR-16","CAN-3","CAN-16","RSA-19",
+    "URU-18","POR-13"
+  ],
+  "specials": ["FWC-14"]
+}
