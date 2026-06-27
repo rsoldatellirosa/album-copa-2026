@@ -1,0 +1,14 @@
+{
+  "_doc": "Listas do Google Keep do usuário (adquiridas recentemente). novas -> owned=true; repetidas -> owned=true + duplicates+=1. Modo ADD.",
+  "novas": [
+    "RSA-11","GER-14","ENG-20","SUI-11","BRA-19","FRA-11","PAR-13","QAT-11","SUI-7",
+    "ESP-17","CAN-4","NED-20","ESP-14","RSA-7","ECU-3","ALG-4","USA-16","SUI-16",
+    "JPN-3","ENG-17","KSA-4","PAN-12","NOR-17","COL-20","HAI-1","USA-1","JOR-6",
+    "JOR-2","BRA-15","CPV-20"
+  ],
+  "repetidas": [
+    "SCO-6","JPN-4","CPV-8","RSA-16","SCO-5","SCO-13","URU-14","IRQ-20","NED-20",
+    "BIH-16","UZB-3","USA-5","CRO-16","TUR-16","BRA-15","URU-5","SCO-9","USA-20",
+    "URU-18"
+  ]
+}
