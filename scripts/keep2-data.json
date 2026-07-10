@@ -1,0 +1,15 @@
+{
+  "_doc": "2º par de listas (arquivos .txt do usuário). novas -> owned=true; repetidas (raw, com repetições) -> owned=true + duplicates += nº de ocorrências. fwx19=FWC-19 (typo). 'raul jimenez coca' = promocional Coca-Cola, fora do modelo (não importado).",
+  "novas": [
+    "BIH-20","CZE-16","JPN-5","SEN-9","CAN-5","TUR-14","FWC-17","CIV-16","SWE-7",
+    "JOR-11","SEN-5","ARG-3","COD-9","ALG-5","SEN-14","ARG-7","BRA-20","CAN-7",
+    "CAN-11","CAN-14","JOR-16","COD-14","COD-5"
+  ],
+  "repetidas": [
+    "RSA-19","USA-18","USA-9","COD-3","SUI-8","CIV-11","SWE-1","GER-11","COD-15",
+    "UZB-16","PAN-13","CIV-3","CAN-9","UZB-16","FRA-5","BRA-18","KSA-13","COD-19",
+    "UZB-20","CIV-7","ECU-2","CZE-11","BRA-14","AUT-13","ALG-3","GER-12","CAN-18",
+    "UZB-11","CZE-7","FRA-14","ALG-15","TUR-18","ALG-20","CUW-8","USA-14","SCO-17",
+    "SUI-12","FWC-19","CAN-3","CUW-4","AUS-5","FWC-9","USA-14","CUW-17","SEN-9","BIH-18"
+  ]
+}
