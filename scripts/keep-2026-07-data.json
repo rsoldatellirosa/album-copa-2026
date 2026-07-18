@@ -1,0 +1,15 @@
+{
+  "_doc": "Listas do usuário (adquiridas jul/2026). novas -> owned=true; repetidas -> owned=true + duplicates+=1. Modo ADD.",
+  "novas": [
+    "KOR-1","CIV-5","GER-18","TUR-15","TUR-9","CZE-2","CZE-19","BIH-7","SWE-16",
+    "SWE-13","SWE-11","JPN-11","CUW-5","IRQ-4","IRQ-8","IRQ-14","IRQ-16","NOR-5",
+    "NOR-9","NOR-18","NOR-20","KSA-16","ECU-12","ECU-13","ALG-16","MAR-5","MAR-9",
+    "ENG-15","ENG-16","CRO-3","CRO-14","CRO-15","CRO-19","CRO-20","GHA-7","GHA-11",
+    "PAN-9","PAN-11","AUT-6","MAR-14","SCO-19","PAR-7","SUI-14","QAT-9","QAT-13",
+    "QAT-15","QAT-16","QAT-20","MEX-3","MEX-7","KOR-2","KOR-14","KOR-18","ESP-5",
+    "ESP-11","ESP-18","IRN-9","IRN-20","EGY-2","NED-16","COD-17","ARG-11","AUT-3"
+  ],
+  "repetidas": [
+    "AUT-6","BRA-16","CRO-20","SEN-13"
+  ]
+}
